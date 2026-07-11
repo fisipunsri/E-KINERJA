@@ -18,7 +18,7 @@
             background-color: #f8fafc;
         }
         
-        /* Iframe berada di bawah loader */
+        /* Iframe dibuat penuh menutupi layar */
         iframe { 
             width: 100%; 
             height: 100%; 
@@ -26,93 +26,15 @@
             position: absolute; 
             top: 0; 
             left: 0; 
-            z-index: 1;
-        }
-        
-        /* Kontainer untuk layar loading */
-        #loader-container { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background-color: #ffffff; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center;
-            z-index: 10; 
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        /* Konten di dalam loader */
-        .loader-content {
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center;
-        }
-
-        /* Styling Logo (Animasi denyut/pulse) */
-        .loader-content img {
-            width: 110px; /* Ukuran logo */
-            margin-bottom: 24px;
-            animation: pulse 2s infinite ease-in-out;
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-        }
-
-        /* Styling Teks */
-        .loader-text {
-            color: #1e3a8a; /* Warna Navy UNSRI */
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Styling Lingkaran Animasi (Spinner) */
-        .spinner {
-            border: 4px solid #f1f5f9;
-            border-top: 4px solid #fbbf24; /* Warna Gold UNSRI */
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            animation: spin 1s linear infinite;
-        }
-
-        /* Animasi */
-        @keyframes spin { 
-            0% { transform: rotate(0deg); } 
-            100% { transform: rotate(360deg); } 
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.9; }
-            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div id="loader-container">
-        <div class="loader-content">
-            <img src="https://lh3.googleusercontent.com/d/1y7uSeQTv9gfPLRiTM7yYbW74Cpv6DXJp" alt="Logo UNSRI">
-            <div class="loader-text">Memuat Aplikasi E-Kinerja...</div>
-            <div class="spinner"></div>
-        </div>
-    </div>
-    
     <iframe 
         src="https://script.google.com/macros/s/AKfycbxLF2dMVWfq0nVTNDrARKjKuptcGgbJHnfQz49tVXzm7W0YX9gqI_7woqWN8--ob5Xz/exec" 
-        onload="
-            var loader = document.getElementById('loader-container');
-            loader.style.opacity = '0';
-            setTimeout(function(){ loader.style.visibility = 'hidden'; loader.style.display = 'none'; }, 500);
-        " 
         allowfullscreen>
     </iframe>
 
 </body>
 </html>
-
